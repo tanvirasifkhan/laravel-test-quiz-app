@@ -42,7 +42,7 @@
         </div>
         <button type="submit" class="btn btn-primary btn-block mb-3" style="background-color: #20c997 !important;border-color: #20c997 !important;">Sign In</button>
         <p class="mb-1 text-center">
-            <a href="">Create an Account as Candidate</a>
+            <a href="{{ route('auth.register_view') }}">Create an Account as Candidate</a>
         </p>
       </form>
     </div>
