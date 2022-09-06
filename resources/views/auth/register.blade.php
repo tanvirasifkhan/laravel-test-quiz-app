@@ -51,7 +51,7 @@
         </div>
         <button type="submit" class="btn btn-primary btn-block mb-3" style="background-color: #20c997 !important;border-color: #20c997 !important;">Register</button>
         <p class="mb-1 text-center">
-            <a href="">Login</a>
+            <a href="{{ route('auth.login_view') }}">Login</a>
         </p>
       </form>
     </div>
