@@ -9,4 +9,8 @@ use Validator;
 
 class AuthController extends Controller {
     
+    // login view page
+    public function loginView(){
+        return view('auth.login');
+    }
 }
