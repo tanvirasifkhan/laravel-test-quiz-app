@@ -16,4 +16,5 @@ use App\Http\Controllers\AuthController;
 
 /********************************** Authentication Routes Start ***********************************/
 Route::get('/', [AuthController::class, 'loginView'])->name('auth.login_view');
+Route::get('/register', [AuthController::class, 'registerView'])->name('auth.register_view');
 /********************************** Authentication Routes End ***********************************/
