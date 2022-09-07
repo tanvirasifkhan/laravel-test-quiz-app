@@ -16,9 +16,11 @@
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right mt-3">
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-sign-out-alt mr-2"></i> Sign Out
-          </a>
+          <a href="#" class="dropdown-item" onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt mr-2"></i> Sign Out</a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+          </form>
       </li>
     </ul>
 </nav>
