@@ -9,4 +9,8 @@ use Validator;
 
 class QuizController extends Controller {
     
+    // show quiz list page
+    public function index(){
+        return view('quiz.list');
+    }
 }
