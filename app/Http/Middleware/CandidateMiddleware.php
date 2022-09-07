@@ -20,7 +20,7 @@ class CandidateMiddleware
         if(Auth::guard('candidate')->check()){
             return $next($request);
         }else{
-            return redirect()->route('auth.login_view');
+            return redirect()->route('login');
         }
     }
 }
