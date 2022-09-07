@@ -19,9 +19,13 @@ use App\Http\Controllers\QuizController;
 
 /********************************** Authentication Routes Start ***********************************/
 Route::group(['middleware'=>'guest'],function(){
-    Route::get('/', [AuthController::class, 'loginView'])->name('auth.login_view');
-    Route::post('/authenticate', [AuthController::class, 'authenticate'])->name('auth.authenticate');
-    Route::get('/register', [AuthController::class, 'registerView'])->name('auth.register_view');
+    Route::get('/', [AuthController::class, 'loginView'])->name('login');
+    Route::post('/authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
+    Route::get('/register', [AuthController::class, 'registerView'])->name('register');
+});
+
+Route::group(['middleware'=>'web'],function(){
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 /********************************** Authentication Routes End ***********************************/
 
