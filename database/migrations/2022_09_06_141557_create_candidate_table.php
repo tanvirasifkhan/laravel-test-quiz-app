@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone')->unique();
             $table->string('cv_link');
+            $table->string('status')->default('pending');
             $table->string('password');
             $table->timestamps();
         });
