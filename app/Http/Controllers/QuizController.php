@@ -13,4 +13,9 @@ class QuizController extends Controller {
     public function index(){
         return view('quiz.list');
     }
+
+    // create new quiz page
+    public function create(){
+        return view('quiz.create');
+    }
 }
