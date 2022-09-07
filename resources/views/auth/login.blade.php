@@ -33,7 +33,7 @@
             </button>
         </div>
       @endif
-    <form action="{{ route('auth.authenticate') }}" method="POST">
+    <form action="{{ route('authenticate') }}" method="POST">
         @csrf
         <div class="form-group mb-3">
           <input type="email" class="form-control" name="email" placeholder="Email Address" value="admin@gmail.com" required>
@@ -43,7 +43,7 @@
         </div>
         <button type="submit" class="btn btn-primary btn-block mb-3" style="background-color: #20c997 !important;border-color: #20c997 !important;">Sign In</button>
         <p class="mb-1 text-center">
-            <a href="{{ route('auth.register_view') }}">Create an Account as Candidate</a>
+            <a href="{{ route('register') }}">Create an Account as Candidate</a>
         </p>
       </form>
     </div>
