@@ -40,6 +40,16 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
+        'candidate' => [
+            'driver' => 'session',
+            'provider' => 'candidates',
+        ],
     ],
 
     /*
@@ -65,10 +75,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'candidates' => [
+            'driver' => 'database',
+            'model' => App\Models\Candidate::class,
+        ],
     ],
 
     /*
