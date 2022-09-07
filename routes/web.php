@@ -35,4 +35,5 @@ Route::get('/candidate/approved/list', [CandidateController::class, 'approvedLis
 
 /********************************** Quiz Routes Start ***********************************/
 Route::get('/quiz/list', [QuizController::class, 'index'])->name('quiz.all');
+Route::get('/quiz/create', [QuizController::class, 'create'])->name('quiz.create');
 /********************************** Quiz Routes End ***********************************/
