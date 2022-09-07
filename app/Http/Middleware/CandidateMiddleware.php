@@ -17,7 +17,7 @@ class CandidateMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check() && Auth::guard('candidate')){
+        if(Auth::guard('candidate')->check()){
             return $next($request);
         }else{
             return redirect()->route('auth.login_view');
