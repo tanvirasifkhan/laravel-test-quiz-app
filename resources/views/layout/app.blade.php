@@ -7,7 +7,11 @@
       <span class="brand-text font-weight-light">Quiz App</span>
     </a>
     <div class="sidebar">
-      @include('includes.admin_menu')
+      @if(auth()->guard('admin')->check())
+        @include('includes.admin_menu')
+      @else
+        @include('includes.admin_menu')
+      @endif
     </div>
   </aside>
   <div class="content-wrapper">
