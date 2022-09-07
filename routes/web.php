@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CandidateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,7 @@ Route::get('/register', [AuthController::class, 'registerView'])->name('auth.reg
 /********************************** Dashboard Routes Start ***********************************/
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 /********************************** Dashboard Routes End ***********************************/
+
+/********************************** Candidate Routes Start ***********************************/
+Route::get('/candidate/list', [CandidateController::class, 'index'])->name('candidate.all');
+/********************************** Candidate Routes End ***********************************/
