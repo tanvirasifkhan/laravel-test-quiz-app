@@ -9,7 +9,7 @@
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-              <a href="" class="btn btn-info mr-2"><i class="fas fa-list"></i>&nbsp; View Quiz List</a>            
+              <a href="{{ route('admin.quiz.all') }}" class="btn btn-info mr-2"><i class="fas fa-list"></i>&nbsp; View Quiz List</a>            
               <button class="btn btn-success" id="create_new_quiz"><i class="fas fa-cloud-upload-alt"></i>&nbsp; Save Quiz</button>
           </ol>
         </div>

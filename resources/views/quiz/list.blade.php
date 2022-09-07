@@ -12,7 +12,7 @@
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <a href="" class="btn btn-success">New Quiz</a>
+                <a href="{{ route('admin.quiz.create') }}" class="btn btn-success">New Quiz</a>
             </ol>            
         </div>
       </div>
