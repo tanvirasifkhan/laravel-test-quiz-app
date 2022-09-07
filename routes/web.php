@@ -27,4 +27,5 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 /********************************** Candidate Routes Start ***********************************/
 Route::get('/candidate/list', [CandidateController::class, 'index'])->name('candidate.all');
+Route::get('/candidate/pending/list', [CandidateController::class, 'pendingList'])->name('candidate.pending');
 /********************************** Candidate Routes End ***********************************/
