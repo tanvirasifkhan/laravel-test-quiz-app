@@ -1,5 +1,8 @@
 @extends('layout.app')
 @section('title','Pending Candidate List')
+@section('datatable_css')
+  <link rel="stylesheet" href="{{ asset('assets/css/dataTables.bootstrap4.css') }}">
+@endsection
 @section('content')
   <div class="content-header">
     <div class="container-fluid">
@@ -17,7 +20,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                      <table id="category" class="table table-bordered table-striped">
+                      <table id="datatable" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th style="width: 250px;text-align: left;">Name</th>
@@ -59,4 +62,13 @@
         </div>
       </div>
   </section>
+@section('datatable_js')
+  <script src="{{ asset('assets/js/jquery.dataTables.js') }}"></script>
+  <script src="{{ asset('assets/js/dataTables.bootstrap4.js') }}"></script>
+  <script>
+      $(function () {
+          $("#datatable").DataTable();
+      });
+  </script>
+@endsection
 @endsection

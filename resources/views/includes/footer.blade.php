@@ -8,6 +8,7 @@
 <script src="{{ asset('assets/js/jquery.overlayScrollbars.min.js') }}"></script>
 <script src="{{ asset('assets/js/adminlte.js') }}"></script>
 <script src="{{ asset('assets/js/dashboard.js') }}"></script>
+@yield('datatable_js')
 @if(Session::has('message'))
   <script>
     toastr.success('{{ Session::get('message') }}');
