@@ -28,13 +28,23 @@ class AuthController extends Controller {
         ]);
 
         if($validators->fails()){
-            return redirect()->route('auth.login_view')->withErrors($validators)->withInput();
+            return redirect()->route('.login')->withErrors($validators)->withInput();
         }else{
             if(Auth::guard('admin')->attempt(['email'=>$request->email,'password'=>$request->password])){
                 return redirect()->route('admin.dashboard')->with('message','Successfully loggedin !');             
             }else{
-                return redirect()->route('auth.login_view')->with('error_message','Email/Password is wrong !'); 
+                return redirect()->route('login')->with('error_message','Email/Password is wrong !'); 
             }
         }           
+    }
+
+    // log the user out
+    public function logout(){
+        if(Auth::guard('admin')->check()){
+            Auth::guard('admin')->logout();
+        }else{
+            Auth::guard('candidate')->logout();
+        }    
+        return redirect()->route('login')->with('message','Successfully signed out !');
     }
 }
