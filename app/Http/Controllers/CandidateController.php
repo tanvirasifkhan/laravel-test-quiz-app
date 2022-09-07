@@ -9,4 +9,8 @@ use App\Models\Candidate;
 
 class CandidateController extends Controller {
     
+    // all candidate list
+    public function index(){
+        return view('candidate.list');
+    }
 }
