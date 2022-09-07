@@ -29,4 +29,5 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/candidate/list', [CandidateController::class, 'index'])->name('candidate.all');
 Route::get('/candidate/pending/list', [CandidateController::class, 'pendingList'])->name('candidate.pending');
 Route::get('/candidate/rejected/list', [CandidateController::class, 'rejectedList'])->name('candidate.rejected');
+Route::get('/candidate/approved/list', [CandidateController::class, 'approvedList'])->name('candidate.approved');
 /********************************** Candidate Routes End ***********************************/
