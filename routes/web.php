@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CandidateController;
+use App\Http\Controllers\QuizController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,7 @@ Route::get('/candidate/pending/list', [CandidateController::class, 'pendingList'
 Route::get('/candidate/rejected/list', [CandidateController::class, 'rejectedList'])->name('candidate.rejected');
 Route::get('/candidate/approved/list', [CandidateController::class, 'approvedList'])->name('candidate.approved');
 /********************************** Candidate Routes End ***********************************/
+
+/********************************** Quiz Routes Start ***********************************/
+Route::get('/quiz/list', [QuizController::class, 'index'])->name('quiz.all');
+/********************************** Quiz Routes End ***********************************/
