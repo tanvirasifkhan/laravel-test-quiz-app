@@ -18,22 +18,30 @@ use App\Http\Controllers\QuizController;
 */
 
 /********************************** Authentication Routes Start ***********************************/
-Route::get('/', [AuthController::class, 'loginView'])->name('auth.login_view');
-Route::get('/register', [AuthController::class, 'registerView'])->name('auth.register_view');
+Route::group(['middleware'=>'guest'],function(){
+    Route::get('/', [AuthController::class, 'loginView'])->name('auth.login_view');
+    Route::get('/register', [AuthController::class, 'registerView'])->name('auth.register_view');
+});
 /********************************** Authentication Routes End ***********************************/
 
 /********************************** Dashboard Routes Start ***********************************/
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::group(['middleware'=>'admin','prefix'=>'admin','as'=>'admin.'],function(){
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
 /********************************** Dashboard Routes End ***********************************/
 
 /********************************** Candidate Routes Start ***********************************/
-Route::get('/candidate/list', [CandidateController::class, 'index'])->name('candidate.all');
-Route::get('/candidate/pending/list', [CandidateController::class, 'pendingList'])->name('candidate.pending');
-Route::get('/candidate/rejected/list', [CandidateController::class, 'rejectedList'])->name('candidate.rejected');
-Route::get('/candidate/approved/list', [CandidateController::class, 'approvedList'])->name('candidate.approved');
+Route::group(['middleware'=>'admin','prefix'=>'admin','as'=>'admin.'],function(){
+    Route::get('/candidate/list', [CandidateController::class, 'index'])->name('candidate.all');
+    Route::get('/candidate/pending/list', [CandidateController::class, 'pendingList'])->name('candidate.pending');
+    Route::get('/candidate/rejected/list', [CandidateController::class, 'rejectedList'])->name('candidate.rejected');
+    Route::get('/candidate/approved/list', [CandidateController::class, 'approvedList'])->name('candidate.approved');
+});
 /********************************** Candidate Routes End ***********************************/
 
 /********************************** Quiz Routes Start ***********************************/
-Route::get('/quiz/list', [QuizController::class, 'index'])->name('quiz.all');
-Route::get('/quiz/create', [QuizController::class, 'create'])->name('quiz.create');
+Route::group(['middleware'=>'admin','prefix'=>'admin','as'=>'admin.'],function(){
+    Route::get('/quiz/list', [QuizController::class, 'index'])->name('quiz.all');
+    Route::get('/quiz/create', [QuizController::class, 'create'])->name('quiz.create');
+});
 /********************************** Quiz Routes End ***********************************/
