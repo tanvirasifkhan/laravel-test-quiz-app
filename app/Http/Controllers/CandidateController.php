@@ -23,4 +23,9 @@ class CandidateController extends Controller {
     public function rejectedList(){
         return view('candidate.rejected');
     }
+
+    // all approved candidate list
+    public function approvedList(){
+        return view('candidate.approved');
+    }
 }
