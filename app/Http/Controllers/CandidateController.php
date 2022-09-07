@@ -18,4 +18,9 @@ class CandidateController extends Controller {
     public function pendingList(){
         return view('candidate.pending');
     }
+
+    // all rejected candidate list
+    public function rejectedList(){
+        return view('candidate.rejected');
+    }
 }
