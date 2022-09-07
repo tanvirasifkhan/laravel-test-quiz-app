@@ -7,7 +7,12 @@
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
-            <img src="{{ asset('assets/images/avatar.png') }}" class="img-circle" style="height: 30px;" alt="User Image"> Tanvir Ahmed
+            <img src="{{ asset('assets/images/avatar.png') }}" class="img-circle" style="height: 30px;" alt="User Image"> 
+            @if(auth()->guard('admin')->check())
+              {{ auth()->guard('admin')->user()->name }}
+            @else
+              {{ auth()->guard('candidate')->user()->name }}
+            @endif
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right mt-3">
           <div class="dropdown-divider"></div>
