@@ -22,6 +22,7 @@ Route::group(['middleware'=>'guest'],function(){
     Route::get('/', [AuthController::class, 'loginView'])->name('login');
     Route::post('/authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
     Route::get('/register', [AuthController::class, 'registerView'])->name('register');
+    Route::post('/signup', [AuthController::class, 'register'])->name('signup');
 });
 
 Route::group(['middleware'=>'web'],function(){
@@ -31,6 +32,10 @@ Route::group(['middleware'=>'web'],function(){
 
 /********************************** Dashboard Routes Start ***********************************/
 Route::group(['middleware'=>'admin','prefix'=>'admin','as'=>'admin.'],function(){
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
+
+Route::group(['middleware'=>'candidate','prefix'=>'candidate','as'=>'candidate.'],function(){
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 /********************************** Dashboard Routes End ***********************************/
