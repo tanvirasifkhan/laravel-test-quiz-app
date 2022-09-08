@@ -33,21 +33,37 @@
             </button>
         </div>
       @endif
-    <form action="" method="post">
+    <form action="{{ route('signup') }}" method="POST">
+        @csrf
         <div class="form-group mb-3">
-          <input type="text" class="form-control" name="name" placeholder="Name">
+          <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name">
+          @if($errors->has('name'))
+            <p class="text-danger">{{$errors->first('name')}}</p>
+          @endif
         </div>
         <div class="form-group mb-3">
-          <input type="email" class="form-control" name="email" placeholder="Email Address">
+          <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email Address">
+          @if($errors->has('email'))
+            <p class="text-danger">{{$errors->first('email')}}</p>
+          @endif
         </div>
         <div class="form-group mb-3">
-          <input type="number" class="form-control" name="phone" placeholder="Phone">
+          <input type="number" class="form-control" name="phone" value="{{ old('phone') }}" placeholder="Phone">
+          @if($errors->has('phone'))
+            <p class="text-danger">{{$errors->first('phone')}}</p>
+          @endif
         </div>
         <div class="form-group mb-3">
-          <input type="text" class="form-control" name="cv_link" placeholder="CV link">
+          <input type="text" class="form-control" name="cv_link" value="{{ old('cv_link') }}" placeholder="CV link">
+          @if($errors->has('cv_link'))
+            <p class="text-danger">{{$errors->first('cv_link')}}</p>
+          @endif
         </div>
         <div class="form-group mb-3">
-          <input type="password" class="form-control" name="password" placeholder="Password" required>
+          <input type="password" class="form-control" name="password" value="{{ old('password') }}" placeholder="Password">
+          @if($errors->has('password'))
+            <p class="text-danger">{{$errors->first('password')}}</p>
+          @endif
         </div>
         <button type="submit" class="btn btn-primary btn-block mb-3" style="background-color: #20c997 !important;border-color: #20c997 !important;">Register</button>
         <p class="mb-1 text-center">
