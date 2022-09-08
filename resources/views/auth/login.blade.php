@@ -36,10 +36,10 @@
     <form action="{{ route('authenticate') }}" method="POST">
         @csrf
         <div class="form-group mb-3">
-          <input type="email" class="form-control" name="email" placeholder="Email Address" value="admin@gmail.com" required>
+          <input type="email" class="form-control" name="email" placeholder="Email Address" required>
         </div>
         <div class="form-group mb-3">
-          <input type="password" class="form-control" name="password" placeholder="Password" value="admin" required>
+          <input type="password" class="form-control" name="password" placeholder="Password" required>
         </div>
         <button type="submit" class="btn btn-primary btn-block mb-3" style="background-color: #20c997 !important;border-color: #20c997 !important;">Sign In</button>
         <p class="mb-1 text-center">
