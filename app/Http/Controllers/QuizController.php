@@ -12,7 +12,8 @@ class QuizController extends Controller {
     
     // show quiz list page
     public function index(){
-        return view('quiz.list');
+        $quizes = Quiz::orderBy('id','DESC')->get();
+        return view('quiz.list',['quizes'=>$quizes]);
     }
 
     // create new quiz page
