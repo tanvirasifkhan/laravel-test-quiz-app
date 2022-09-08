@@ -40,7 +40,7 @@
                               <td style="vertical-align: middle !important;text-align: center;">{{ $quiz->total_mark }}</td>
                               <td style="vertical-align:middle;text-align:center;">{{ $quiz->pass_mark }}</td>
                               <td style="vertical-align:middle;text-align:center;">
-                                  <a href="" class="btn btn-primary"><i class="fas fa-eye"></i> View Details</a>
+                                  <a href="{{ route('admin.quiz.detail',$quiz->id) }}" class="btn btn-primary"><i class="fas fa-eye"></i> View Details</a>
                               </td>
                             </tr>
                           @endforeach                            
