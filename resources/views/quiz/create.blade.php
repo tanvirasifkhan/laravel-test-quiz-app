@@ -96,7 +96,7 @@
                             </div>
                         </div>
                     </div>  
-                    <button class="btn btn-success float-right" id="add_question" value="1">Add More</button>                  
+                    <button type="button" class="btn btn-success float-right" id="add_question" value="1">Add More</button>                  
                 </div>
             </div>
         </div>
