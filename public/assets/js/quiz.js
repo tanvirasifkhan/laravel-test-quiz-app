@@ -58,3 +58,41 @@ $('#add_question').click(function(){
 $(document).on('click','.remove',function(){
     $('#qa_'+$(this).val()).remove()
 });
+
+$('#create_new_quiz').click(function(){
+    var title = $('#title').val()
+    var pass_mark = $('#pass_mark').val()    
+    var question_options = []
+    for(count=0; count<$('input[name="question[]"]').length; count++){
+        question_options.push({
+            'question': $('input[name="question[]"]')[count].value,
+            'selected_answer': $('select[name="selected_answer[]"] :selected')[count].value,
+            'mark': Number($('input[name="mark[]"]')[count].value),
+            'options':{
+                'A':$('input[name="answer_1"]')[count].value,
+                'B':$('input[name="answer_2"]')[count].value,
+                'C':$('input[name="answer_3"]')[count].value,
+                'D':$('input[name="answer_4"]')[count].value
+            }
+        })
+    }
+
+    var formData = new FormData()
+    formData.append('title',title)
+    formData.append('pass_mark',pass_mark)
+    formData.append('question_options', JSON.stringify(question_options))
+    $.ajax({
+        method:'POST',
+        url:'/admin/quiz/store',
+        headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') },
+        data:formData,
+        dataType:'JSON',
+        contentType:false,
+        processData:false,
+        cache:false,
+        success:function(data){
+            toastr.success('Quiz saved successfully!');
+            window.location = '/admin/quiz/list';
+        }
+    })
+});
