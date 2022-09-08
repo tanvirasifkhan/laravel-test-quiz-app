@@ -29,6 +29,8 @@ class RedirectIfAuthenticated
 
         if(Auth::guard('admin')->check()){
             return redirect()->route('admin.dashboard');
+        }elseif(Auth::guard('candidate')->check()){
+            return redirect()->route('candidate.dashboard');
         }
 
         return $next($request);
