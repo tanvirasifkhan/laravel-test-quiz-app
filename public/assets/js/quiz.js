@@ -63,6 +63,7 @@ $('#create_new_quiz').click(function(){
     var title = $('#title').val()
     var pass_mark = $('#pass_mark').val()    
     var question_options = []
+    var total_mark = 0
     for(count=0; count<$('input[name="question[]"]').length; count++){
         question_options.push({
             'question': $('input[name="question[]"]')[count].value,
@@ -75,10 +76,12 @@ $('#create_new_quiz').click(function(){
                 'D':$('input[name="answer_4"]')[count].value
             }
         })
+        total_mark += Number($('input[name="mark[]"]')[count].value)
     }
 
     var formData = new FormData()
     formData.append('title',title)
+    formData.append('total_mark',total_mark)
     formData.append('pass_mark',pass_mark)
     formData.append('question_options', JSON.stringify(question_options))
     $.ajax({

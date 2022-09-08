@@ -25,6 +25,7 @@ class QuizController extends Controller {
     public function store(Request $request){
         $quiz = new Quiz();
         $quiz->title = $request->title;
+        $quiz->total_mark = $request->total_mark;
         $quiz->pass_mark = $request->pass_mark;
         $quiz->question_options = $request->question_options;
         $quiz->save();
