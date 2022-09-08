@@ -48,5 +48,6 @@ Route::group(['middleware'=>'admin','prefix'=>'admin','as'=>'admin.'],function()
 Route::group(['middleware'=>'admin','prefix'=>'admin','as'=>'admin.'],function(){
     Route::get('/quiz/list', [QuizController::class, 'index'])->name('quiz.all');
     Route::get('/quiz/create', [QuizController::class, 'create'])->name('quiz.create');
+    Route::post('/quiz/store', [QuizController::class, 'store'])->name('quiz.store');
 });
 /********************************** Quiz Routes End ***********************************/
