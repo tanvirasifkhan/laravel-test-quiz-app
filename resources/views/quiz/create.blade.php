@@ -47,6 +47,7 @@
             <div class="row justify-content-center">
                 <div class="col-8">
                     <div id="question_list">
+                        <div class="alert alert-warning">Please fill up every field in the following question and answer fields</div>
                         <div class="card qa" id="qa_1">
                             <div class="card-header">Question & Answers 1</div>
                             <div class="card-body">
