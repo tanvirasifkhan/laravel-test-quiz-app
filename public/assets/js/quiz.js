@@ -54,3 +54,7 @@ $('#add_question').click(function(){
         '</div>';
     $('#question_list').append(question_row);
 });
+
+$(document).on('click','.remove',function(){
+    $('#qa_'+$(this).val()).remove()
+});
