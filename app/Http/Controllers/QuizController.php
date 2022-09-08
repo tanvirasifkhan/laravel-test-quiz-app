@@ -32,4 +32,10 @@ class QuizController extends Controller {
         $quiz->save();
         return Response::json($quiz);
     }
+
+    // quiz detail
+    public function detail($id){
+        $quiz_detail = Quiz::where('id',$id)->get();
+        return view('quiz.detail',['quiz_detail'=>$quiz_detail]);
+    }
 }
