@@ -10,7 +10,7 @@
       @if(auth()->guard('admin')->check())
         @include('includes.admin_menu')
       @else
-        @include('includes.admin_menu')
+        @include('includes.candidate_menu')
       @endif
     </div>
   </aside>
