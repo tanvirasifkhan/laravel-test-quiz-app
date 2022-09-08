@@ -84,18 +84,32 @@ $('#create_new_quiz').click(function(){
     formData.append('total_mark',total_mark)
     formData.append('pass_mark',pass_mark)
     formData.append('question_options', JSON.stringify(question_options))
-    $.ajax({
-        method:'POST',
-        url:'/admin/quiz/store',
-        headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') },
-        data:formData,
-        dataType:'JSON',
-        contentType:false,
-        processData:false,
-        cache:false,
-        success:function(data){
-            toastr.success('Quiz saved successfully!');
-            window.location = '/admin/quiz/list';
-        }
-    })
+    if($('#title').val() == ''){
+        $('.errorTitle').text('Enter quiz title field!');
+    }else{
+        $('.errorTitle').text('');
+    }
+
+    if($('#pass_mark').val() == ''){
+        $('.errorPassMark').text('Enter quiz pass mark field!');
+    }else{
+        $('.errorPassMark').text('');
+    }
+
+    if($('#title').val() != '' && $('#pass_mark').val() != ''){
+        $.ajax({
+            method:'POST',
+            url:'/admin/quiz/store',
+            headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') },
+            data:formData,
+            dataType:'JSON',
+            contentType:false,
+            processData:false,
+            cache:false,
+            success:function(data){
+                toastr.success('Quiz saved successfully!');
+                window.location = '/admin/quiz/list';
+            }
+        })
+    }    
 });
