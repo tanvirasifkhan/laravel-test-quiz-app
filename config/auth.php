@@ -76,7 +76,7 @@ return [
         ],
 
         'candidates' => [
-            'driver' => 'database',
+            'driver' => 'eloquent',
             'model' => App\Models\Candidate::class,
         ],
     ],
