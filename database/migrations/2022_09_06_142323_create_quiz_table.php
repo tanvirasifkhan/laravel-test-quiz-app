@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('question_options');
+            $table->integer('total_mark');
             $table->integer('pass_mark');
             $table->timestamps();
         });
