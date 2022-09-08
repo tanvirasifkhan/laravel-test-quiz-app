@@ -9,6 +9,7 @@
 <script src="{{ asset('assets/js/adminlte.js') }}"></script>
 <script src="{{ asset('assets/js/dashboard.js') }}"></script>
 @yield('datatable_js')
+@yield('quiz_js')
 @if(Session::has('message'))
   <script>
     toastr.success('{{ Session::get('message') }}');
