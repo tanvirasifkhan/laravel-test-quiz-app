@@ -9,10 +9,10 @@ $('#add_question').click(function(){
             '<div class="card-body">'+
                 '<div class="form-row">'+                                    
                     '<div class="col-6">'+
-                        '<input type="text" class="form-control" name="question'+ count_question + '" placeholder="Question">'+
+                        '<input type="text" class="form-control" name="question[]" placeholder="Question">'+
                     '</div>'+
                     '<div class="col-3">'+
-                        '<select class="form-control" name="selected_answer'+ count_question + '">'+
+                        '<select class="form-control" name="selected_answer[]">'+
                             '<option value="">Select Answer</option>'+
                             '<option value="A">A</option>'+
                             '<option value="B">B</option>'+
@@ -21,7 +21,7 @@ $('#add_question').click(function(){
                         '</select>'+
                     '</div>'+
                     '<div class="col-3">'+
-                        '<input type="number" class="form-control" name="mark'+ count_question + '" placeholder="Mark">'+
+                        '<input type="number" class="form-control" name="mark[]" placeholder="Mark">'+
                     '</div>'+
                 '</div>'+
                 '<div class="mt-3">'+
@@ -29,25 +29,25 @@ $('#add_question').click(function(){
                         '<div class="input-group-prepend">'+
                             '<div class="input-group-text">A</div>'+
                         '</div>'+
-                        '<input type="text" class="form-control" name="answer'+ count_question + '[]" placeholder="Answer One">'+
+                        '<input type="text" class="form-control" name="answer_1" placeholder="Answer One">'+
                     '</div>'+
                     '<div class="input-group mb-2">'+
                         '<div class="input-group-prepend">'+
                             '<div class="input-group-text">B</div>'+
                         '</div>'+
-                        '<input type="text" class="form-control" name="answer'+ count_question + '[]" placeholder="Answer Two">'+
+                        '<input type="text" class="form-control" name="answer_2" placeholder="Answer Two">'+
                     '</div>'+
                     '<div class="input-group mb-2">'+
                         '<div class="input-group-prepend">'+
                             '<div class="input-group-text">C</div>'+
                         '</div>'+
-                        '<input type="text" class="form-control" name="answer'+ count_question + '[]" placeholder="Answer Three">'+
+                        '<input type="text" class="form-control" name="answer_3" placeholder="Answer Three">'+
                     '</div>'+
                     '<div class="input-group mb-2">'+
                         '<div class="input-group-prepend">'+
                             '<div class="input-group-text">D</div>'+
                         '</div>'+
-                        '<input type="text" class="form-control" name="answer'+ count_question + '[]" placeholder="Answer Four">'+
+                        '<input type="text" class="form-control" name="answer_4" placeholder="Answer Four">'+
                     '</div>'+
                 '</div>'+
             '</div>'+
