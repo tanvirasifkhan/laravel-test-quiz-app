@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Quiz;
 use Auth;
 use Validator;
+use Response;
 
 class QuizController extends Controller {
     
@@ -29,5 +30,6 @@ class QuizController extends Controller {
         $quiz->pass_mark = $request->pass_mark;
         $quiz->question_options = $request->question_options;
         $quiz->save();
+        return Response::json($quiz);
     }
 }
