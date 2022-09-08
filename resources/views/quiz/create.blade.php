@@ -102,4 +102,7 @@
         </div>
     </form>
   </section>
+    @section('quiz_js')
+       <script src="{{ asset('assets/js/quiz.js') }}"></script>
+     @endsection
 @endsection
