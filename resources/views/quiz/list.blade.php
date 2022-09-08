@@ -34,14 +34,16 @@
                             </tr>
                         </thead>
                         <tbody>
+                          @foreach ($quizes as $quiz)
                             <tr>
-                                <td style="vertical-align: middle !important;text-align: left;">Quiz Title</td>
-                                <td style="vertical-align: middle !important;text-align: center;">Total Marks</td>
-                                <td style="vertical-align:middle;text-align:center;">Pass Mark</td>
-                                <td style="vertical-align:middle;text-align:center;">
-                                    <a href="" class="btn btn-primary"><i class="fas fa-eye"></i> View Details</a>
-                                </td>
+                              <td style="vertical-align: middle !important;text-align: left;">{{ $quiz->title }}</td>
+                              <td style="vertical-align: middle !important;text-align: center;">{{ $quiz->total_mark }}</td>
+                              <td style="vertical-align:middle;text-align:center;">{{ $quiz->pass_mark }}</td>
+                              <td style="vertical-align:middle;text-align:center;">
+                                  <a href="" class="btn btn-primary"><i class="fas fa-eye"></i> View Details</a>
+                              </td>
                             </tr>
+                          @endforeach                            
                         </tbody>
                         <tfoot>
                             <tr>
