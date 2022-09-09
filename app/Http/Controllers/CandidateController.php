@@ -37,4 +37,12 @@ class CandidateController extends Controller {
         $find_candidate->save();
         return redirect()->route('admin.candidate.all')->with('message','Candidate marked as approved successfully !');
     }
+
+    // mark as rejected
+    public function markRejected($id){
+        $find_candidate = Candidate::findOrFail($id);
+        $find_candidate->status = 'rejected';
+        $find_candidate->save();
+        return redirect()->route('admin.candidate.all')->with('message','Candidate marked as rejected successfully !');
+    }
 }
