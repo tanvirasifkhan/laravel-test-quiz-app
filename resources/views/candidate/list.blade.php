@@ -51,12 +51,12 @@
                               </td>
                               <td style="vertical-align:middle;text-align:center;">
                                   @if($candidate->status == 'pending')
-                                    <a href="" class="btn btn-success">Approve</a>
+                                    <a href="{{ route('admin.candidate.mark_as_approved',$candidate->id) }}" class="btn btn-success">Approve</a>
                                     <a href="" class="btn btn-danger">Reject</a>
                                   @elseif($candidate->status == 'approved')
                                     <a href="" class="btn btn-danger">Reject</a>
                                   @elseif($candidate->status == 'rejected')
-                                    <a href="" class="btn btn-danger">Approved</a>
+                                    <a href="{{ route('admin.candidate.mark_as_approved',$candidate->id) }}" class="btn btn-danger">Approve</a>
                                   @endif
                                   <a href="" class="btn btn-primary"><i class="fas fa-eye"></i> View Details</a>
                                   <a href="" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> Edit</a>
