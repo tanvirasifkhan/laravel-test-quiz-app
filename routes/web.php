@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\QuizParticipationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,5 +56,11 @@ Route::group(['middleware'=>'admin','prefix'=>'admin','as'=>'admin.'],function()
     Route::get('/quiz/create', [QuizController::class, 'create'])->name('quiz.create');
     Route::post('/quiz/store', [QuizController::class, 'store'])->name('quiz.store');
     Route::get('/quiz/{id}/detail', [QuizController::class, 'detail'])->name('quiz.detail');
+});
+/********************************** Quiz Routes End ***********************************/
+
+/********************************** Quiz Routes Start ***********************************/
+Route::group(['middleware'=>'candidate','prefix'=>'candidate','as'=>'candidate.'],function(){
+    Route::get('/participation/list', [QuizParticipationController::class, 'index'])->name('participation.list');
 });
 /********************************** Quiz Routes End ***********************************/
