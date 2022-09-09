@@ -58,7 +58,7 @@
                                   @elseif($candidate->status == 'rejected')
                                     <a href="{{ route('admin.candidate.mark_as_approved',$candidate->id) }}" class="btn btn-success">Approve</a>
                                   @endif
-                                  <a href="" class="btn btn-primary"><i class="fas fa-eye"></i> View Details</a>
+                                  <a href="{{ route('admin.candidate.detail',$candidate->id) }}" class="btn btn-primary"><i class="fas fa-eye"></i> View Details</a>
                                   <a href="" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> Edit</a>
                                   <button class="btn btn-danger" onclick="alert
                                       if(confirm('Are you sure ?')){
