@@ -23,36 +23,37 @@
                       <table id="datatable" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th style="width: 250px;text-align: left;">Name</th>
-                                <th style="width: 250px;text-align: left;">Email Address</th>
-                                <th style="width: 200px;text-align: center;">Phone</th>
-                                <th style="width: 170px;text-align: center;">CV link</th>
-                                <th style="width: 170px;text-align: center;">Status</th>
-                                <th style="text-align: center;">Action</th>
+                                <th style="width: 200px;text-align: left;">Name</th>
+                                <th style="width: 200px;text-align: left;">Email Address</th>
+                                <th style="width: 100px;text-align: center;">Phone</th>
+                                <th style="width: 100px;text-align: center;">CV link</th>
+                                <th style="width: 100px;text-align: center;">Status</th>
                             </tr>
                         </thead>
                         <tbody>
+                          @foreach ($candidate_list as $candidate)
                             <tr>
-                                <td style="vertical-align: middle !important;text-align: left;">Name</td>
-                                <td style="vertical-align: middle !important;text-align: left;">Email Address</td>
-                                <td style="vertical-align:middle;text-align:center;">Phone</td>
-                                <td style="vertical-align:middle;text-align:center;">CV link</td>
-                                <td style="vertical-align:middle;text-align:center;">Pending</td>
-                                <td style="vertical-align:middle;text-align:center;">
-                                    <a href="" class="btn btn-primary"><i class="fas fa-eye"></i> View Details</a>
-                                    <a href="" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> Edit</a>
-                                    <button class="btn btn-danger" data-toggle="modal" data-target="#delete_candidate_modal"><i class="fas fa-trash"></i> Delete</button>
-                                </td>
-                            </tr>
+                              <td style="vertical-align: middle !important;text-align: left;">{{ $candidate->name }}</td>
+                              <td style="vertical-align: middle !important;text-align: left;">{{ $candidate->email }}</td>
+                              <td style="vertical-align:middle;text-align:center;">{{ $candidate->phone }}</td>
+                              <td style="vertical-align:middle;text-align:center;">
+                                <a href="{{ $candidate->cv_link }}" class="btn btn-info">CV Link</a>
+                              </td>
+                              <td style="vertical-align:middle;text-align:center;">
+                                @if($candidate->status == 'rejected')
+                                  <span class="badge badge-warning">Rejected</span>
+                                @endif
+                              </td>
+                          </tr>
+                          @endforeach                            
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th style="width: 250px;text-align: left;">Name</th>
-                                <th style="width: 250px;text-align: left;">Email Address</th>
-                                <th style="width: 200px;text-align: center;">Phone</th>
-                                <th style="width: 170px;text-align: center;">CV link</th>
-                                <th style="width: 170px;text-align: center;">Status</th>
-                                <th style="text-align: center;">Action</th>
+                              <th style="width: 200px;text-align: left;">Name</th>
+                              <th style="width: 200px;text-align: left;">Email Address</th>
+                              <th style="width: 100px;text-align: center;">Phone</th>
+                              <th style="width: 100px;text-align: center;">CV link</th>
+                              <th style="width: 100px;text-align: center;">Status</th>
                             </tr>
                         </tfoot>
                       </table>
