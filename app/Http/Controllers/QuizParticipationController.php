@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\QuizParticipation;
 use App\Models\Quiz;
+use Auth;
+use Response;
 
 class QuizParticipationController extends Controller {
     
@@ -23,5 +25,16 @@ class QuizParticipationController extends Controller {
     public function newParticipation($id){
         $quiz_detail = Quiz::where('id',$id)->get();
         return view('quiz_participation.new_participation',['quiz_detail'=>$quiz_detail]);
+    }
+
+    // create new participation
+    public function saveParticipation(Request $request){
+        $participatin = new QuizParticipation();
+        $participatin->candidate_id = Auth::guard('candidate')->user()->id;
+        $participatin->quiz_id = $request->quiz_id;
+        $participatin->answer = $request->answer;
+        $participatin->mark = $request->mark;
+        $participatin->save();
+        return Response::json($participatin);
     }
 }
