@@ -12,7 +12,8 @@ class QuizParticipationController extends Controller {
     
     // show quiz participation list
     public function index(){
-        return view('quiz_participation.list');
+        $participation_list = QuizParticipation::where('candidate_id',Auth::guard('candidate')->user()->id)->orderBy('id','DESC')->get();
+        return view('quiz_participation.list',['participation_list'=>$participation_list]);
     }
 
     // quiz list
