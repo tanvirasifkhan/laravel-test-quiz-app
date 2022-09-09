@@ -1,6 +1,7 @@
 $('#save_participation').click(function(){
     var quiz_id = $('input[name="quiz_id"]').val()
     var candidate_id = $('input[name="candidate"]').val()
+    var pass_mark = Number($('input[name="pass_mark"]').val())
     var answer = []
     var total_mark = 0
     for(count=0; count<$('input[name="key[]"]').length; count++){
@@ -15,10 +16,12 @@ $('#save_participation').click(function(){
             'option_answered':$('input[name="answer'+ key +'"]:checked').val()
         })        
     }
+    var passed = total_mark >= pass_mark ? true: false
 
     var formData = new FormData()
     formData.append('quiz_id',quiz_id)
     formData.append('mark',total_mark)
+    formData.append('passed',passed)
     formData.append('answer', JSON.stringify(answer))
 
     $.ajax({

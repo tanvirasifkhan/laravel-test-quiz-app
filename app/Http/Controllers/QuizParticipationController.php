@@ -35,6 +35,7 @@ class QuizParticipationController extends Controller {
         $participatin->quiz_id = $request->quiz_id;
         $participatin->answer = $request->answer;
         $participatin->mark = $request->mark;
+        $participatin->passed = $request->passed;
         $participatin->save();
         return Response::json($participatin);
     }
