@@ -25,12 +25,14 @@ class CandidateController extends Controller {
 
     // all rejected candidate list
     public function rejectedList(){
-        return view('candidate.rejected');
+        $candidate_list = Candidate::where('status','rejected')->orderBy('id','DESC')->get();
+        return view('candidate.rejected',['candidate_list'=>$candidate_list]);
     }
 
     // all approved candidate list
     public function approvedList(){
-        return view('candidate.approved');
+        $candidate_list = Candidate::where('status','approved')->orderBy('id','DESC')->get();
+        return view('candidate.approved',['candidate_list'=>$candidate_list]);
     }
 
     // view candidate detail
