@@ -20,6 +20,8 @@
     <form action="" method="post">
         <div class="container-fluid">
             @foreach ($quiz_detail as $quiz)
+            <input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
+            <input type="hidden" name="candidate" value="{{ Auth::guard('candidate')->user()->id }}">
                 <div class="row justify-content-center">
                     <div class="col-8">
                         <div class="card">
