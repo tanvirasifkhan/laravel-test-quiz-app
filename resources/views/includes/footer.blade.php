@@ -11,6 +11,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 @yield('datatable_js')
 @yield('quiz_js')
+@yield('quiz_participation_js')
 @if(Session::has('message'))
   <script>
     toastr.success('{{ Session::get('message') }}');
