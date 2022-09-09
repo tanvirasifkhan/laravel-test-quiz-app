@@ -22,6 +22,7 @@
             @foreach ($quiz_detail as $quiz)
             <input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
             <input type="hidden" name="candidate" value="{{ Auth::guard('candidate')->user()->id }}">
+            <input type="hidden" name="pass_mark" value="{{ $quiz->pass_mark }}">
                 <div class="row justify-content-center">
                     <div class="col-8">
                         <div class="card">
