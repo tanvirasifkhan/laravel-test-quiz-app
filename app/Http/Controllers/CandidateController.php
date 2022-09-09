@@ -29,4 +29,12 @@ class CandidateController extends Controller {
     public function approvedList(){
         return view('candidate.approved');
     }
+
+    // mark as approved
+    public function markApproved($id){
+        $find_candidate = Candidate::findOrFail($id);
+        $find_candidate->status = 'approved';
+        $find_candidate->save();
+        return redirect()->route('admin.candidate.all')->with('message','Candidate marked as approved successfully !');
+    }
 }
