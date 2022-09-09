@@ -62,5 +62,6 @@ Route::group(['middleware'=>'admin','prefix'=>'admin','as'=>'admin.'],function()
 /********************************** Quiz Routes Start ***********************************/
 Route::group(['middleware'=>'candidate','prefix'=>'candidate','as'=>'candidate.'],function(){
     Route::get('/participation/list', [QuizParticipationController::class, 'index'])->name('participation.list');
+    Route::get('/participation/quiz/ist', [QuizParticipationController::class, 'quizList'])->name('participation.quiz_list');
 });
 /********************************** Quiz Routes End ***********************************/
