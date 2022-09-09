@@ -9,19 +9,19 @@
       <li class="nav-item has-treeview {{ Request::is('candidate/participation/*') ? 'menu-open':'' }}">
         <a href="#" class="nav-link {{ Request::is('candidate/participation/*') ? 'active':'' }}">
           <i class="nav-icon fas fa-swatchbook"></i>
-          <p>Quiz Participation<i class="fas fa-angle-left right"></i></p>
+          <p>Quiz Test<i class="fas fa-angle-left right"></i></p>
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
             <a href="{{ route('candidate.participation.list') }}" class="nav-link {{ Request::is('candidate/participation/list') ? 'active':'' }}">
               <i class="far fa-circle nav-icon"></i>
-              <p>Participation List</p>
+              <p>Test List</p>
             </a>
           </li>
           <li class="nav-item">
             <a href="{{ route('candidate.participation.quiz_list') }}" class="nav-link {{ Request::is('candidate/participation/quiz/ist') ? 'active':'' }}">
               <i class="far fa-circle nav-icon"></i>
-              <p>New Participation</p>
+              <p>New Test</p>
             </a>
           </li>
         </ul>

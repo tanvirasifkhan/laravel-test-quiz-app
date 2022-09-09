@@ -38,7 +38,7 @@
                               <td style="vertical-align: middle !important;text-align: center;">{{ $quiz->total_mark }}</td>
                               <td style="vertical-align:middle;text-align:center;">{{ $quiz->pass_mark }}</td>
                               <td style="vertical-align:middle;text-align:center;">
-                                  <a href="{{ route('candidate.participation.new',$quiz->id) }}" class="btn btn-primary"><i class="fas fa-eye"></i> Participate</a>
+                                  <a href="{{ route('candidate.participation.new',$quiz->id) }}" class="btn btn-primary"><i class="fas fa-eye"></i> Take Test</a>
                               </td>
                             </tr>
                           @endforeach                            

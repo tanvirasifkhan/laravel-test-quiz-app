@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('title','Quiz Participation List')
+@section('title','Quiz Test List')
 @section('datatable_css')
     <link rel="stylesheet" href="{{ asset('assets/css/dataTables.bootstrap4.css') }}">
 @endsection
@@ -8,11 +8,11 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Quiz Participation List</h1>
+          <h1 class="m-0 text-dark">Quiz Test List</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <a href="{{ route('candidate.participation.quiz_list') }}" class="btn btn-success">New Participation</a>
+                <a href="{{ route('candidate.participation.quiz_list') }}" class="btn btn-success">New Test</a>
             </ol>            
         </div>
       </div>
