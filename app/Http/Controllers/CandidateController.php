@@ -45,4 +45,11 @@ class CandidateController extends Controller {
         $find_candidate->save();
         return redirect()->route('admin.candidate.all')->with('message','Candidate marked as rejected successfully !');
     }
+
+    // delete candidate
+    public function destroy($id){
+        $find_candidate = Candidate::findOrFail($id);
+        $find_candidate->delete();
+        return redirect()->route('admin.candidate.all')->with('message','Candidate deleted successfully !');
+    }
 }
