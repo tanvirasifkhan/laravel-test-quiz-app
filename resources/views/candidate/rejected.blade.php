@@ -41,7 +41,7 @@
                               </td>
                               <td style="vertical-align:middle;text-align:center;">
                                 @if($candidate->status == 'rejected')
-                                  <span class="badge badge-warning">Rejected</span>
+                                  <span class="badge badge-danger">Rejected</span>
                                 @endif
                               </td>
                           </tr>
