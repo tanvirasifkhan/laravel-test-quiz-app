@@ -11,7 +11,8 @@ class CandidateController extends Controller {
     
     // all candidate list
     public function index(){
-        return view('candidate.list');
+        $candidate_list = Candidate::orderBy('id','DESC')->get();
+        return view('candidate.list',['candidate_list'=>$candidate_list]);
     }
 
     // all pending candidate list
