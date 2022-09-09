@@ -64,5 +64,6 @@ Route::group(['middleware'=>'candidate','prefix'=>'candidate','as'=>'candidate.'
     Route::get('/participation/list', [QuizParticipationController::class, 'index'])->name('participation.list');
     Route::get('/participation/quiz/ist', [QuizParticipationController::class, 'quizList'])->name('participation.quiz_list');
     Route::get('/participation/{id}/new', [QuizParticipationController::class, 'newParticipation'])->name('participation.new');
+    Route::post('/participation/{id}/save', [QuizParticipationController::class, 'saveParticipation'])->name('participation.save');
 });
 /********************************** Quiz Routes End ***********************************/
