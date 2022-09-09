@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
 use App\Models\Candidate;
+use Illuminate\Validation\Rule;
+use Validator;
 
 class CandidateController extends Controller {
     
@@ -56,6 +58,28 @@ class CandidateController extends Controller {
         $find_candidate->status = 'rejected';
         $find_candidate->save();
         return redirect()->route('admin.candidate.all')->with('message','Candidate marked as rejected successfully !');
+    }
+
+    // update candidate
+    public function update(Request $request, $id){
+        $validators = Validator::make($request->all(),[
+            'name'=>'required',
+            'email'=>['required','email',Rule::unique('candidates')->ignore($request->id),'unique:users'],
+            'phone'=>['required','digits:11',Rule::unique('candidates')->ignore($request->id)],
+            'cv_link'=>'required'
+        ]);
+
+        if($validators->fails()){
+            return redirect()->route('admin.candidate.show', $id)->withErrors($validators)->withInput();
+        }else{
+            $candidate = Candidate::findOrFail($id);
+            $candidate->name = $request->name;
+            $candidate->email = $request->email;
+            $candidate->phone = $request->phone;
+            $candidate->cv_link = $request->cv_link;
+            $candidate->save();
+            return redirect()->route('admin.candidate.all')->with('message','Candidate updated successfully !');
+        }        
     }
 
     // delete candidate
