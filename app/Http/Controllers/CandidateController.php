@@ -19,7 +19,8 @@ class CandidateController extends Controller {
 
     // all pending candidate list
     public function pendingList(){
-        return view('candidate.pending');
+        $candidate_list = Candidate::where('status','pending')->orderBy('id','DESC')->get();
+        return view('candidate.pending',['candidate_list'=>$candidate_list]);
     }
 
     // all rejected candidate list
