@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('candidate_id');
             $table->text('answer');
             $table->integer('mark');
+            $table->boolean('passed');
             $table->timestamps();
             $table->foreign('quiz_id')->references('id')->on('quizes');
             $table->foreign('candidate_id')->references('id')->on('candidates');
