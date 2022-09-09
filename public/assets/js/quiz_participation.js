@@ -16,7 +16,7 @@ $('#save_participation').click(function(){
             'option_answered':$('input[name="answer'+ key +'"]:checked').val()
         })        
     }
-    var passed = total_mark >= pass_mark ? true: false
+    var passed = total_mark >= pass_mark ? 1: 0
 
     var formData = new FormData()
     formData.append('quiz_id',quiz_id)
