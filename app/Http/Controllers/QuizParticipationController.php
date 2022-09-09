@@ -7,4 +7,8 @@ use App\Models\QuizParticipation;
 
 class QuizParticipationController extends Controller {
     
+    // show quiz participation list
+    public function index(){
+        return view('quiz_participation.list');
+    }
 }
