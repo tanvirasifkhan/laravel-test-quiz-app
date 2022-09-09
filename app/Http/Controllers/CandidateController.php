@@ -30,6 +30,12 @@ class CandidateController extends Controller {
         return view('candidate.approved');
     }
 
+    // view candidate detail
+    public function detail($id){
+        $candidate_detail = Candidate::where('id',$id)->get();
+        return view('candidate.detail',['candidate_detail'=>$candidate_detail]);
+    }
+
     // mark as approved
     public function markApproved($id){
         $find_candidate = Candidate::findOrFail($id);
