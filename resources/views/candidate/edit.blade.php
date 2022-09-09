@@ -23,7 +23,7 @@
                     <div class="card-header">Edit Candidate</div>
                     <div class="card-body">
                         @foreach ($candidate_detail as $candidate)
-                        <form action="" method="POST">
+                        <form action="{{ route('admin.candidate.update', $candidate->id) }}" method="POST">
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="name">Name</label>
