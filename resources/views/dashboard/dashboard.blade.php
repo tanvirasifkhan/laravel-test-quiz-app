@@ -91,7 +91,7 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53</h3>
+                <h3>{{ $count_passed }}</h3>
                 <p>Passed</p>
               </div>
               <div class="icon">
@@ -102,7 +102,7 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3>{{ $count_failed }}</h3>
                 <p>Failed</p>
               </div>
               <div class="icon">
