@@ -22,12 +22,13 @@ class DashboardController extends Controller {
             $count_approved = Candidate::where('status','approved')->count();
             $count_pending = Candidate::where('status','pending')->count();
         }
-        
+
         $count_participation = 0;
         $count_participation = 0;
         $count_passed = 0;
         $count_failed = 0;
         if(Auth::guard('candidate')->check()){
+            $count_quiz = Quiz::count();
             $count_participation = QuizParticipation::where('candidate_id',Auth::guard('candidate')->user()->id)->count();
             $count_participation = QuizParticipation::where('candidate_id',Auth::guard('candidate')->user()->id)->count();
             $count_passed = QuizParticipation::where('candidate_id',Auth::guard('candidate')->user()->id)
