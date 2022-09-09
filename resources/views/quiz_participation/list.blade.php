@@ -12,7 +12,7 @@
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <a href="" class="btn btn-success">New Participation</a>
+                <a href="{{ route('candidate.participation.quiz_list') }}" class="btn btn-success">New Participation</a>
             </ol>            
         </div>
       </div>
@@ -35,15 +35,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                              <td style="vertical-align: middle !important;text-align: left;">date</td>
-                              <td style="vertical-align: middle !important;text-align: center;">quiz</td>
-                              <td style="vertical-align:middle;text-align:center;">mark</td>
-                              <td style="vertical-align:middle;text-align:center;">status</td>
-                              <td style="vertical-align:middle;text-align:center;">
-                                  <a href="}" class="btn btn-primary"><i class="fas fa-eye"></i> View Details</a>
-                              </td>
-                            </tr>                    
+                            @foreach ($participation_list as $participation)
+                                <tr>
+                                    <td style="vertical-align: middle !important;text-align: left;">{{ date_format(date_create($participation->created_at),'d M, Y') }}</td>
+                                    <td style="vertical-align: middle !important;text-align: center;">{{ $participation->quiz_id != NULL ? $participation->quiz->title : 'N/A' }}</td>
+                                    <td style="vertical-align:middle;text-align:center;">{{ $participation->mark }}</td>
+                                    <td style="vertical-align:middle;text-align:center;">
+                                        @if($participation->quiz_id != NULL)
+                                            @if($participation->quiz->pass_mark <= $participation->mark)
+                                                <p class="badge badge-success">Passed</p>
+                                            @else
+                                                <p class="badge badge-danger">Failed</p>
+                                            @endif
+                                        @endif
+                                    </td>
+                                    <td style="vertical-align:middle;text-align:center;">
+                                        <a href="}" class="btn btn-primary"><i class="fas fa-eye"></i> View Details</a>
+                                    </td>
+                                </tr>
+                            @endforeach                                                
                         </tbody>
                         <tfoot>
                             <tr>
