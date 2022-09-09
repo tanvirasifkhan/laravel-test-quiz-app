@@ -52,6 +52,7 @@ Route::group(['middleware'=>'admin','prefix'=>'admin','as'=>'admin.'],function()
     Route::post('/candidate/{id}/destroy', [CandidateController::class, 'destroy'])->name('candidate.destroy');
     Route::get('/candidate/{id}/detail', [CandidateController::class, 'detail'])->name('candidate.detail');
     Route::get('/candidate/{id}/show', [CandidateController::class, 'show'])->name('candidate.show');
+    Route::post('/candidate/{id}/update', [CandidateController::class, 'update'])->name('candidate.update');
 });
 /********************************** Candidate Routes End ***********************************/
 
