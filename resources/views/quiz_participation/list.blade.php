@@ -31,7 +31,6 @@
                                 <th style="width: 350px;text-align: left;">Quiz</th>
                                 <th style="width: 150px;text-align: center;">Mark</th>
                                 <th style="width: 150px;text-align: center;">Status</th>
-                                <th style="text-align: center;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -49,9 +48,6 @@
                                             @endif
                                         @endif
                                     </td>
-                                    <td style="vertical-align:middle;text-align:center;">
-                                        <a href="}" class="btn btn-primary"><i class="fas fa-eye"></i> View Details</a>
-                                    </td>
                                 </tr>
                             @endforeach                                                
                         </tbody>
@@ -61,7 +57,6 @@
                                 <th style="width: 350px;text-align: left;">Quiz</th>
                                 <th style="width: 150px;text-align: center;">Mark</th>
                                 <th style="width: 150px;text-align: center;">Status</th>
-                                <th style="text-align: center;">Action</th>
                             </tr>
                         </tfoot>
                       </table>
