@@ -60,7 +60,17 @@
                                   @endif
                                   <a href="" class="btn btn-primary"><i class="fas fa-eye"></i> View Details</a>
                                   <a href="" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> Edit</a>
-                                  <button class="btn btn-danger" data-toggle="modal" data-target="#delete_candidate_modal"><i class="fas fa-trash"></i> Delete</button>
+                                  <button class="btn btn-danger" onclick="alert
+                                      if(confirm('Are you sure ?')){
+                                        event.preventDefault();
+                                        document.getElementById('delete-{{ $candidate->id }}').submit();
+                                      }else{
+                                        event.preventDefault();
+                                      }
+                                  "><i class="fas fa-trash"></i> Delete</button>
+                                    <form id="delete-{{ $candidate->id }}" action="{{ route('admin.candidate.destroy',$candidate->id) }}" style="display:none;" method="POST">
+                                        @csrf
+                                    </form>
                               </td>
                           </tr>
                           @endforeach                            
