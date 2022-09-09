@@ -49,6 +49,7 @@ Route::group(['middleware'=>'admin','prefix'=>'admin','as'=>'admin.'],function()
     Route::get('/candidate/approved/list', [CandidateController::class, 'approvedList'])->name('candidate.approved');
     Route::get('/candidate/{id}/mark_as_approved', [CandidateController::class, 'markApproved'])->name('candidate.mark_as_approved');
     Route::get('/candidate/{id}/mark_as_rejected', [CandidateController::class, 'markRejected'])->name('candidate.mark_as_rejected');
+    Route::post('/candidate/{id}/destroy', [CandidateController::class, 'destroy'])->name('candidate.destroy');
 });
 /********************************** Candidate Routes End ***********************************/
 
