@@ -27,10 +27,10 @@
                       <table id="datatable" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th style="width: 450px;text-align: left;">Date</th>
-                                <th style="width: 450px;text-align: left;">Quiz</th>
-                                <th style="width: 200px;text-align: center;">Mark</th>
-                                <th style="width: 200px;text-align: center;">Status</th>
+                                <th style="width: 150px;text-align: left;">Date</th>
+                                <th style="width: 350px;text-align: left;">Quiz</th>
+                                <th style="width: 150px;text-align: center;">Mark</th>
+                                <th style="width: 150px;text-align: center;">Status</th>
                                 <th style="text-align: center;">Action</th>
                             </tr>
                         </thead>
@@ -47,10 +47,10 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th style="width: 450px;text-align: left;">Date</th>
-                                <th style="width: 450px;text-align: left;">Quiz</th>
-                                <th style="width: 200px;text-align: center;">Mark</th>
-                                <th style="width: 200px;text-align: center;">Status</th>
+                                <th style="width: 150px;text-align: left;">Date</th>
+                                <th style="width: 350px;text-align: left;">Quiz</th>
+                                <th style="width: 150px;text-align: center;">Mark</th>
+                                <th style="width: 150px;text-align: center;">Status</th>
                                 <th style="text-align: center;">Action</th>
                             </tr>
                         </tfoot>
