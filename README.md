@@ -1,64 +1,69 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## About Project
 
-## About Laravel
+  
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This project is basically a Quiz app. It consists roles of admin and candicate. Admin can login, create quiz test & approve / reject candidates. Candidate can register & participate any quiz test. Candidates have to be approved by admin to participate in any quiz test. 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Necessary Softwares to install
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+  
 
-## Learning Laravel
+Before using the system you need to install couple of softwares such as PHP >=8.0 , MySQL & Composer.
+For php & mysql go to https://www.apachefriends.org/ and download the xampp application for your system ( windows / linux/ mac ). Go to https://getcomposer.org/ for downloading composer. After installing the necessary softwares follow the instructions to make the application live.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## How to make the app live ?
+<b>Step # 1</b>
+Clone the git repository & cd into the <b>laravel-test-quiz-app</b> folder. Install composer inside it like the following.
+  
 
-## Laravel Sponsors
+```
+git clone https://github.com/tanvirasifkhan/laravel-test-quiz-app.git
+cd laravel-test-quiz-app
+composer install
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<b>Step # 2</b>
+Create <code>.env</code> file and copy all the environment variables from  <code>.env.example</code> file to <code>.env</code>. After that change your database configuration and then create a database called <b>quiz</b>.
+  
 
-### Premium Partners
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=quiz
+DB_USERNAME=root
+DB_PASSWORD=
+```
+<b>Step # 3</b>
+First generate security key then run the migration for creating tables and then run the application by following the below commands
+  
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+```
+php artisan key:generate
+php artisan migrate
+php artisan serve
+```
+  Congratulation , your application is live now :)
 
-## Contributing
+### Creating default admin
+Run the following command to create the default admin with email : <b>admin@gmail.com</b> and password: <b>admin</b> credentials.
+  ```
+php artisan db:seed --class=DatabaseSeeder
+```
+Now you can login into the system as administrator.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## How the application works ?
 
-## Code of Conduct
+<b># Admin Panel</b>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Admin will login into the system. Admin can see the list of all the registered candidate list. Mark any candidate as  <b>approved/rejected</b>. Also admin can delete , edit, view detail of any candidate.
+Admin can create new quiz with question and options and view detail of any quiz. Admin has some dashboard statistics.
 
-## Security Vulnerabilities
+<b># Candidate Panel</b>
+Candidate has to register first. Every candidate is registered with <code>pending</code> status. After getting registered candidate will be redirected to the login page with a success message.Note that , candidate will not be able to do anything if the status is <b>pending/rejected</b>. After getting approved by admin candidates 
+can do their stuffs such as quiz participation list ( quizes he participated ), take participate any quiz test. Basically candidate can choose any quiz test to participate. After participation candidate can see the result wheather he <b>passed/failed</b>. Candidate also has some dashboard statistics as well.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<b>So, this is the way the application works. Thanks</b>
