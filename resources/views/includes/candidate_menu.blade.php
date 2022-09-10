@@ -16,7 +16,7 @@
             <li class="nav-item">
               <a href="{{ route('candidate.participation.list') }}" class="nav-link {{ Request::is('candidate/participation/list') ? 'active':'' }}">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Test List</p>
+                <p>Test Participation List</p>
               </a>
             </li>
             <li class="nav-item">
