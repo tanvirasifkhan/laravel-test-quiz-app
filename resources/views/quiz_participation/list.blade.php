@@ -28,8 +28,9 @@
                         <thead>
                             <tr>
                                 <th style="width: 150px;text-align: left;">Date</th>
-                                <th style="width: 350px;text-align: left;">Quiz</th>
-                                <th style="width: 150px;text-align: center;">Mark</th>
+                                <th style="width: 350px;text-align: left;">Quiz Title</th>
+                                <th style="width: 350px;text-align: left;">Quiz Pass Mark</th>
+                                <th style="width: 150px;text-align: center;">Your Mark</th>
                                 <th style="width: 150px;text-align: center;">Status</th>
                             </tr>
                         </thead>
@@ -38,6 +39,7 @@
                                 <tr>
                                     <td style="vertical-align: middle !important;text-align: left;">{{ date_format(date_create($participation->created_at),'d M, Y') }}</td>
                                     <td style="vertical-align: middle !important;text-align: center;">{{ $participation->quiz_id != NULL ? $participation->quiz->title : 'N/A' }}</td>
+                                    <td style="vertical-align:middle;text-align:center;">{{ $participation->quiz_id != NULL ? $participation->quiz->pass_mark : 'N/A' }}</td>
                                     <td style="vertical-align:middle;text-align:center;">{{ $participation->mark }}</td>
                                     <td style="vertical-align:middle;text-align:center;">
                                         @if($participation->quiz_id != NULL)
@@ -53,10 +55,11 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th style="width: 150px;text-align: left;">Date</th>
-                                <th style="width: 350px;text-align: left;">Quiz</th>
-                                <th style="width: 150px;text-align: center;">Mark</th>
-                                <th style="width: 150px;text-align: center;">Status</th>
+                              <th style="width: 150px;text-align: left;">Date</th>
+                              <th style="width: 350px;text-align: left;">Quiz Title</th>
+                              <th style="width: 350px;text-align: left;">Quiz Pass Mark</th>
+                              <th style="width: 150px;text-align: center;">Your Mark</th>
+                              <th style="width: 150px;text-align: center;">Status</th>
                             </tr>
                         </tfoot>
                       </table>
